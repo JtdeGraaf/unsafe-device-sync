@@ -1,0 +1,33 @@
+{
+  "name": "@graaf/unsafe-device-sync",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Unsafe shared storage that keeps a small personal app the same on several devices, joined by a few shared words. No accounts, no secrecy, no backups.",
+  "repository": "github:JtdeGraaf/unsafe-device-sync",
+  "exports": {
+    "./client": "./src/client/index.ts",
+    "./server": "./src/server/index.ts",
+    "./cloudflare": "./src/cloudflare/index.ts",
+    "./phrase": "./src/phrase.ts",
+    "./words/nl": "./src/words/nl.ts"
+  },
+  "files": [
+    "src",
+    "!src/**/*.test.ts"
+  ],
+  "scripts": {
+    "typecheck": "tsc -b tsconfig.json tsconfig.cloudflare.json",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261026.1",
+    "@types/node": "^24.19.2",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.5",
+    "zod": "^4.6.7"
+  }
+}
